@@ -5,6 +5,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 var paperball;
 var ground;
+var leftwall,rightwall,bottomwall;
 function preload(){
 	
 }
@@ -12,9 +13,10 @@ function preload(){
 function setup() {
 	createCanvas(800, 700);
 
-	//ground = createSprite(400,90,800,10);
 
-	//leftwall = createSprite(600,)
+	leftwall = createSprite(400,610,20,80);
+	rightwall = createSprite(600,610,20,80);
+	bottomwall = createSprite(500,642,200,10);
 	
 	engine = Engine.create();
 	world = engine.world;
@@ -23,7 +25,7 @@ function setup() {
  	World.add(world, ground);
 
 	//Create the Bodies Here.
-	paperball = new Paperball(100,60,10);
+	paperball = new Paperball(100,600,10);
 	
 	Engine.run(engine);
   
@@ -34,13 +36,13 @@ function draw() {
 rectMode(CENTER);
 background(0);
 rect(ground.position.x,ground.position.y,width,10)
-keyPressed();
+//keyPressed();
 paperball.display();
-//drawSprites();
+drawSprites();
 }
 
 function keyPressed(){
 	if (keyCode === UP_ARROW){
-		Matter.Body.applyForce(paperball.body,paperball.body.position,{x:3,y:-3});
+		Matter.Body.applyForce(paperball.body,paperball.body.position,{x:10,y:-13});
 	}
 }
