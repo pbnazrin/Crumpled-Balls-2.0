@@ -25,7 +25,7 @@ function setup() {
  	World.add(world, ground);
 
 	//Create the Bodies Here.
-	paperball = new Paperball(100,600,10);
+	paperball = new Paperball(100,600,70);
 	
 	Engine.run(engine);
   
