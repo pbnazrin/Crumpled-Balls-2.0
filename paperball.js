@@ -15,6 +15,6 @@ class Paperball{
     display(){
         var pos = this.body.position;
         imageMode(CENTER);
-        image(this.ball,pos.x,pos.y,this.radius,this.radius)
+        image(this.image,pos.x,pos.y,this.radius,this.radius)
     }
 };
